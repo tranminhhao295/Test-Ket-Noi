@@ -12,5 +12,6 @@ namespace MyWebApp.Data
 
         // Khai báo bảng Categories. Tên property 'Categories' sẽ là tên bảng trong SQL
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
