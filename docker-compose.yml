@@ -7,14 +7,26 @@ services:
       context: ./MyWebApp/MyWebApp
       dockerfile: Dockerfile
     ports:
-      - "5000:8080" # Chạy ở localhost:5000
+      - "5000:8080"
     container_name: my-dotnet-app
 
-  # Project 2: PHP
+  # Project 2: PHP App
   webapp-php:
     build:
       context: ./PhpProject
       dockerfile: Dockerfile
     ports:
-      - "5001:80"   # Chạy ở localhost:5001
+      - "5001:80"
     container_name: my-php-app
+    depends_on:
+      - db-mysql # Chờ DB chạy xong mới chạy PHP
+
+  # Project 2: Database (MySQL) -> Thêm cái này
+  db-mysql:
+    image: mysql:5.7
+    container_name: my-mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123 # Mật khẩu DB
+      MYSQL_DATABASE: quanlysinhvien # Tên DB
+    ports:
+      - "3306:3306"
