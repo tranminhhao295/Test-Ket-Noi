@@ -4,7 +4,7 @@ services:
   # Project 1: ASP.NET Core
   webapp-dotnet:
     build:
-      context: ./MyWebApp
+      context: ./MyWebApp/MyWebApp
       dockerfile: Dockerfile
     ports:
       - "5000:8080" # Chạy ở localhost:5000
