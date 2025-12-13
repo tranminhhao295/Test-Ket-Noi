@@ -1,0 +1,21 @@
+name: Test Docker Build
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Lay code ve may ao
+      uses: actions/checkout@v4
+
+    - name: Kiem tra Docker Compose
+      run: docker-compose config
+
+    - name: Chay thu ung dung (Build)
+      run: docker-compose up -d --build
+      
+    - name: Kiem tra trang thai Container
+      run: docker ps -a
