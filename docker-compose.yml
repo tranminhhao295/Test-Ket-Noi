@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # Project 1: ASP.NET Core
+  webapp-dotnet:
+    build:
+      context: ./MyWebApp
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080" # Chạy ở localhost:5000
+    container_name: my-dotnet-app
+
+  # Project 2: PHP
+  webapp-php:
+    build:
+      context: ./PhpProject
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"   # Chạy ở localhost:5001
+    container_name: my-php-app
