@@ -12,10 +12,10 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Kiem tra Docker Compose
-      run: docker-compose config
+      run: docker compose config
 
     - name: Chay thu ung dung (Build)
-      run: docker-compose up -d --build
+      run: docker compose up -d --build
       
     - name: Kiem tra trang thai Container
       run: docker ps -a
