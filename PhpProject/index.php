@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style> body { font-family: sans-serif; padding: 20px; } table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #ddd; padding: 8px; } </style>
 </head>
 <body>
+    <h1><u>Trần Minh Hảo - DH5200646 - Cuối Kỳ</u></h1>
     <h2>Ứng dụng PHP - Docker - MySQL</h2>
     
     <form method="post" action="">
